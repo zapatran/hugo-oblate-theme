@@ -1,0 +1,11 @@
+{{ range where .Paginator.Pages "Section" "ne" "" }}
+  <a class="post" id="post-3398" href='{{ .URL }}'>
+    <div class="post-thumbnail">
+      <img src="{{ (print "images/" .Params.image) | absURL }}"
+        alt="Everything I Know as a Software Developer Without a Degree" height="30" width="30">
+    </div>
+    <div class="post-title">{{ .LinkTitle }}</div>
+    <span class="post-date"><time>{{ .Date.Format "Jan 2 2006" }}</time></span>
+  </a>
+{{ end }}
+

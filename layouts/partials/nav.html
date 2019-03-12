@@ -1,0 +1,40 @@
+<!-- <nav class="main-nav">
+	{{ if not .IsHome }}
+		<a href='{{ .Site.BaseURL }}'> <span class="arrow">←</span>{{ .Site.Params.home | default "Home" }}</a>
+	{{ end }}
+
+	{{ range .Site.Menus.main }}
+ 		<a href='{{ .URL }}'>{{ .Name }}</a>
+  	{{ end }}
+
+	{{ if .Site.Params.enableRSS }}
+		<a class="cta" href="{{ .Site.RSSLink }}">{{ .Site.Params.subscribe | default "Subscribe" }}</a>
+	{{ end }}
+</nav> -->
+<nav class="nav">
+  <div class="nav-container">
+    <div class="brand">
+      <a href='{{ .Site.BaseURL }}'> <span class="arrow">
+          <span>💾 {{ .Site.Title | default "Home" }}</span>
+      </a>
+    </div>
+    <div class="links">
+      {{ range .Site.Menus.main }}
+        <a href='{{ .URL }}'>{{ .Name }}</a>
+      {{ end }}
+    </div>
+    <div class="extra">
+      
+      {{ range $key, $val := .Site.Social }}
+      <a class="symbol" href="{{ $val }}" class="nav-icon" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-{{ $key }}"></i>
+      </a>
+      {{ end }}
+      {{ if .Site.Params.enableRSS }}
+      <a class="cta" href="{{ .Site.RSSLink }}"><i class="fas fa-rss"></i>{{ .Site.Params.subscribe | default "" }}</a>
+      {{ end }}
+      <!-- <a href="https://ko-fi.com/taniarascia" class="nav-icon" target="_blank"><span class="yellow"><i
+            class="fas fa-coffee"></i></span></a> -->
+    </div>
+  </div>
+</nav>
