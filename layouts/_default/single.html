@@ -2,12 +2,11 @@
 <article class="article" id="post-3339">
   <div class="container">
     <header class="single-header">
-      {{ if .Site.Params.emoji }}
+      {{ if .Site.Params.icon }}
         <span class="article-icon">{{ .Params.icon }}</span>
       {{ else }}
         <img src="{{ (print "images/" .Params.image) | absURL }}" alt="{{ .Title }}" height="75" width="75">
       {{ end }}
-      
       <h1>{{ .Title }}</h1>
       <div class="date">
         <time datetime="2018-11-06">{{ .Date.Format "January 2, 2006" }}</time> &nbsp;
