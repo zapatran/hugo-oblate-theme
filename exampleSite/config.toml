@@ -1,0 +1,21 @@
+baseurl = "https://example.org/"
+themesDir = "../.."
+languageCode = "en-us"
+title = "Zapatran"
+theme = "hugo-oblate-theme"
+
+[taxonomies]
+  category = "categories"
+
+[params]
+  enableRSS = true
+  subscribe = ""
+  icon = "👨🏻‍💻"
+  # image = "floppy.png"
+  customCSS = ['css/main.css']
+  emojicom = "0whQUXyf9ahwDHReCeKj"
+
+[social]
+		linkedin = "https://www.linkedin.com/in/thorjuberaalbo/"
+    github   = "https://www.github.com/zapatran"
+		instagram = "https://www.instagram.com/zapatran"
