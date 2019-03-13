@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div id="front-page" class="container">
   <section class="section">
-    <h2>Articles</h2>
+    <h2>{{ .Title }}</h2>
     {{ partial "list-categories.html"  . }}
     {{ partial "post-list.html"  . }}
   </section>

@@ -1,0 +1,7 @@
+<div class="tab-container">
+  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+      <a href="{{ .Permalink }}" class="tab">{{ $name }}</a>
+    {{ end }}
+  {{ end }}
+</div>
