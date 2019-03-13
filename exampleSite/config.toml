@@ -1,20 +1,31 @@
+# Site settings
 baseurl = "https://example.org/"
 themesDir = "../.."
 languageCode = "en-us"
-title = "Zapatran"
+title = "Oblate"
 theme = "hugo-oblate-theme"
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+# Disable comments by leaving disqusShortname empty
+disqusShortname = "spf13"
 
 [taxonomies]
   category = "categories"
 
 [params]
+  name = "John Doe"
+	description = "Describe your website"
   enableRSS = true
   subscribe = ""
   icon = "👨🏻‍💻"
   # image = "floppy.png"
   customCSS = ['css/main.css']
-  emojicom = "0whQUXyf9ahwDHReCeKj"
+  emojicom = ""
+  # titles
+  articles = ""
+  latestPosts = ""
 
+# Add additional social link entries underneath
 [social]
 		linkedin = "https://www.linkedin.com/in/thorjuberaalbo/"
     github   = "https://www.github.com/zapatran"
