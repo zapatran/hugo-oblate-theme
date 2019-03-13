@@ -5,7 +5,7 @@
       {{ .Content }}
     </section>
     <section class="section">
-      <h2>Latest Posts</h2>
+      <h2>{{ .Site.Params.latestPosts | default "Latest Posts" }}</h2>
       {{ partial "post-list.html"  . }}
     </section>
   </div>
