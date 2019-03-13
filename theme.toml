@@ -11,11 +11,11 @@ features = []
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Thor Jubera Albo"
+  homepage = "https://github.com/zapatran"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+[[original]]
+  # Original creator of oblate theme for wordpress
+  name = "Oblate"
+  homepage = "https://www.taniarascia.com"
+  repo = "https://github.com/taniarascia/oblate"
