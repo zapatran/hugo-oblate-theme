@@ -3,7 +3,7 @@
     <div class="brand">
       <a href='{{ .Site.BaseURL }}'>
         {{ if .Site.Params.emoji }}
-          <span class="brand-icon">{{ .Site.Params.icon}}</span>
+          <span class="brand-icon">{{ .Site.Params.emoji}}</span>
         {{ else }}
           <img src="{{ (print .Site.Params.image) | absURL  }}" class="brand-image">
         {{ end }}
