@@ -1,5 +1,9 @@
 <footer class="footer">
   <div class="container">
-    <small>Made by <strong>{{ .Site.Title }}</strong></small>
+    {{ if .Site.Params.copyright }}
+      <small>© Copyright {{ now.Format "2006" }} {{ .Site.Params.name }}</small>
+    {{ else }}
+      <small>Made with ❤️ by <strong>{{ .Site.Title }}</strong></small>
+    {{ end }}
   </div>
 </footer>
