@@ -17,6 +17,7 @@ disqusShortname = ""
 	description = "Describe your website"
   enableRSS = true
   subscribe = ""
+  # you can use emoji or image params for displaying icons near the title 
   emoji = "👨🏻‍💻"
   # image = "/images/floppy.png"
   customCSS = ['css/main.css']
@@ -25,6 +26,7 @@ disqusShortname = ""
   articles = ""
   latestPosts = ""
   copyright = false
+
 # Add additional social link entries underneath
 [social]
 		linkedin = "https://www.linkedin.com/in/"
