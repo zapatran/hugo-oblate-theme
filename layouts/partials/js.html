@@ -1,7 +1,11 @@
 <script src="/js/main.js"></script>
 <!-- prism for highlighting code -->
 <script src="/js/prism.js"></script>
+{{ if .Site.Params.emojicom }}
 <!-- Start emojicom.io widget -->
 <script>window.emojicom_widget = { campaign: {{ .Site.Params.emojicom }} };</script>
 <script src="https://cdn.emojicom.io/embed/widget.js" async></script>
 <!-- End emojicom.io widget -->
+{{ end }}
+
+{{ template "_internal/google_analytics.html" . }}

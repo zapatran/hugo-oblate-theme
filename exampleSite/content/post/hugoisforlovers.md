@@ -13,7 +13,7 @@ categories = [
     "golang",
 ]
 image = "floppy.png"
-icon = "📖"
+emoji = "📖"
 +++
 
 ## Step 1. Install Hugo

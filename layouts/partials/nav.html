@@ -2,10 +2,10 @@
   <div class="nav-container">
     <div class="brand">
       <a href='{{ .Site.BaseURL }}'>
-        {{ if .Site.Params.icon }}
+        {{ if .Site.Params.emoji }}
           <span class="brand-icon">{{ .Site.Params.icon}}</span>
         {{ else }}
-          <img src="{{ (print "images/" .Site.Params.image) | absURL  }}" class="brand-image">
+          <img src="{{ (print .Site.Params.image) | absURL  }}" class="brand-image">
         {{ end }}
         <span>{{ .Site.Title | default "Home" }}</span>
       </a>

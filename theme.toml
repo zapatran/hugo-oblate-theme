@@ -2,13 +2,14 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "Oblate"
+description = "A minimalistic and responsive theme for bloggers/developers."
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
 homepage = "http://example.com/"
-tags = []
-features = []
+tags = ["blog", "google analytics", "rss", "syntax highlighting", "Oblate"]
+features = ["google analytics", "rss", "syntax highlighting", "blog"]
 min_version = "0.41"
+googleAnalytics = ""
 
 [author]
   name = "Thor Jubera Albo"

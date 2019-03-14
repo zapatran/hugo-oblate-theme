@@ -6,7 +6,7 @@ categories = [
     "Development",
     "deploy",
 ]
-icon = "💾"
+emoji = "💾"
 +++
 
 Test from forestry

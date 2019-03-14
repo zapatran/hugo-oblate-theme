@@ -14,7 +14,7 @@ categories = [
     "golang",
 ]
 image = "floppy.png"
-icon = "🍗"
+emoji = "🍗"
 +++
 
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for

@@ -7,7 +7,7 @@ theme = "hugo-oblate-theme"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 # Disable comments by leaving disqusShortname empty
-disqusShortname = "spf13"
+disqusShortname = ""
 
 [taxonomies]
   category = "categories"
@@ -17,7 +17,7 @@ disqusShortname = "spf13"
 	description = "Describe your website"
   enableRSS = true
   subscribe = ""
-  icon = "👨🏻‍💻"
+  emoji = "👨🏻‍💻"
   # image = "floppy.png"
   customCSS = ['css/main.css']
   emojicom = ""
@@ -27,6 +27,6 @@ disqusShortname = "spf13"
 
 # Add additional social link entries underneath
 [social]
-		linkedin = "https://www.linkedin.com/in/thorjuberaalbo/"
+		linkedin = "https://www.linkedin.com/in/"
     github   = "https://www.github.com/zapatran"
-		instagram = "https://www.instagram.com/zapatran"
+		instagram = "https://www.instagram.com/"
