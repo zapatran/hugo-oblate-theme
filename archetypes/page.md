@@ -1,10 +1,8 @@
 +++
 title = "{{ replace .TranslationBaseName '-' ' ' | title }}"
-description = ""
 date = {{ .Date }}
-categories = [
-  "Development",
-  "golang",
-]
-emoji = "📖"
+layout = "page"
+hidden = false
+[menu.main]
+  weight = 1
 +++
