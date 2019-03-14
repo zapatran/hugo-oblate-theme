@@ -13,7 +13,6 @@ categories = [
     "Development",
     "golang",
 ]
-image = "floppy.png"
 emoji = "🍗"
 +++
 

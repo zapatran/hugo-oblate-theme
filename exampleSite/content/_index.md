@@ -1,12 +1,13 @@
 +++
 date = "2018-12-29T13:02:37+01:00"
 hidden = false
-title = "thor"
+title = "John Doe"
 +++
 
-# Hi, I'm Thor
+# Hi, I'm John Doe
 
-I’m a __developer__, __designer__, and __former chef__ from Chicago. I build open source projects and write the missing instruction manuals of the web.
+I’m a __developer__ from Barcelona. I build this amazing theme for you.
 
-I created this site to document everything I learn, and share a bit of [myself](/) with the world. My site has no ads, affiliates, sponsored posts, or paywalls. If you enjoy my content, please consider supporting what I do.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus lectus ante, in dignissim ante dapibus ut. Quisque nunc ex, tempor ut sapien tempus, viverra aliquam quam. Praesent at imperdiet enim. Phasellus vel ligula purus. Donec facilisis auctor risus, quis pretium est interdum eget. Aliquam vitae cursus risus. Cras sem est, commodo non elit a, tincidunt porta dui. Nunc auctor urna a enim convallis, sit amet tristique lectus aliquam. Sed leo urna, imperdiet quis eleifend vitae, facilisis et nisl. Integer vitae placerat augue. Vestibulum feugiat diam eget egestas volutpat. Sed suscipit lorem sed sapien fringilla dapibus.
+
 ***

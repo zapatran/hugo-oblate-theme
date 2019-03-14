@@ -18,7 +18,7 @@ disqusShortname = ""
   enableRSS = true
   subscribe = ""
   emoji = "👨🏻‍💻"
-  # image = "floppy.png"
+  # image = "/images/floppy.png"
   customCSS = ['css/main.css']
   emojicom = ""
   # default titles
