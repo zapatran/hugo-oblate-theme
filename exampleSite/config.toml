@@ -24,7 +24,7 @@ disqusShortname = ""
   # titles
   articles = ""
   latestPosts = ""
-
+  copyright = false
 # Add additional social link entries underneath
 [social]
 		linkedin = "https://www.linkedin.com/in/"

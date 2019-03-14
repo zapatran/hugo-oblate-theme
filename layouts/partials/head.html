@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
 <link rel="stylesheet" id="All-css" href="//fonts.googleapis.com/css?family=Nunito%3A400%2C600%2C700%7CRoboto+Mono"
   type="text/css" media="all">
-{{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Fingerprint }}
+{{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <link id="night-css" rel="stylesheet" href="">
 {{ range .Site.Params.customCSS }}
