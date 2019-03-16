@@ -129,6 +129,85 @@ a.post-title:hover {
   display: none;
 }
 
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem;
+  border-radius: 4px;
+  border-bottom: 2px solid $light;
+
+  .button {
+    margin-bottom: 0;
+  }
+
+  &-content {
+    display: block;
+    flex: 2;
+    font-weight: 500;
+    color: #333;
+  }
+
+  // &:hover {
+  //   background: $light;
+  //   text-decoration: none !important;
+  // }
+
+  &:hover .project-title {
+    color: #111;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.project-thumbnail {
+  width: 30px;
+  margin-right: 1.3rem;
+
+  img {
+    display: block;
+  }
+}
+
+.project-description {
+  font-size: .9rem;
+  color: #888;
+  margin: 0 2rem 0 0;
+  flex: 8;
+  display: none;
+}
+
+@include small-breakpoint {
+  .project-description {
+    display: block;
+    font-size: 1.1rem;
+  }
+}
+
+.project-title {
+  display: block;
+  flex: 2;
+  font-weight: 500;
+  color: #333;
+}
+
+a.project-title {
+  display: block;
+}
+
+a.project-title:hover {
+  text-decoration: underline;
+  color: $heading-font-color;
+}
+
+.project-date {
+  color: #888;
+  font-size: .9rem;
+  display: none;
+}
+
 .view-all {
   background: $light;
   border-radius: 4px;
@@ -152,6 +231,15 @@ a.post-title:hover {
   }
 
   .post-title {
+    margin-right: 2rem;
+  }
+
+  .project-date,
+  .project-description {
+    display: block;
+  }
+
+  .project-title {
     margin-right: 2rem;
   }
 
@@ -609,6 +697,7 @@ blockquote {
 }
 
 .posts-links,
+.projects-links,
 .comment-links {
   display: flex;
   justify-content: space-between;

@@ -1,9 +1,14 @@
-
 {{ define "main" }}  
   <div id="front-page" class="container">
     <section class="section">
       {{ .Content }}
     </section>
+    {{ if .Site.Data.projects }}
+    <section class="section">
+      <h2>{{ .Site.Params.projects | default "Projects" }}</h2>
+      {{ partial "projects-list.html"  . }}
+    </section>
+    {{ end }}
     <section class="section">
       <h2>{{ .Site.Params.latestPosts | default "Latest Posts" }}</h2>
       {{ partial "post-list.html"  . }}

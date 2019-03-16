@@ -50,6 +50,21 @@ In order to generate new entry
 $ hugo new  post/<new-entry>.md
 ```
 
+## Projects
+
+You can add your own projects creating a file `projects.json` with the following structure:
+```json
+[
+  {
+    "name": "name of your project",
+    "emoji": "🖍",
+    "description": "Description of your project",
+    "project": "https://zapatran.dev",
+    "source": "https://github.com/zapatran/hugo-oblate-theme"
+  }
+]
+```
+
 ## Disqus
 
 This theme features a comment system powered by Disqus too. Just add your Disqus-shortname to the [`config.toml`](//github.com/zapatran/hugo-oblate-theme/blob/dev/exampleSite/config.toml) and let readers respond to your blog posts.

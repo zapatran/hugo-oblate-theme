@@ -1,0 +1,17 @@
+{{ range $.Site.Data.projects }}
+  <div class="project" id="post-3398">
+    <div class="project-thumbnail">
+      <span class="project-icon">{{ .emoji }}</span>
+    </div>
+    <div class="project-content">
+      <div class="project-title">{{ .name }}</div>
+      <div class="project-description">{{ .description }}</div>
+    </div>
+    <div class="buttons">
+      {{ if .project }}
+        <a class="button" href="{{ .project }}" target="_blank" rel="noopener noreferrer">Project</a>
+      {{ end }}
+      <a class="muted-button button" href="{{ .source }}" rel="noopener noreferrer">Source</a>
+    </div>
+  </div>
+{{ end }}

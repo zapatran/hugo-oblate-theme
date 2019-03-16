@@ -25,6 +25,7 @@ disqusShortname = ""
   # default titles
   articles = ""
   latestPosts = ""
+  projects = ""
   copyright = false
 
 # Add additional social link entries underneath
