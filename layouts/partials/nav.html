@@ -30,6 +30,11 @@
         </a>
       {{ end }}
       <a class="nav-icon" id="night-mode"><i class="fas fa-moon"></i></a>
+      {{ if .IsTranslated }}
+      {{ range .Translations }}
+      <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+      {{ end}}
+      {{ end }}
     </div>
   </div>
 </nav>

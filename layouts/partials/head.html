@@ -1,33 +1,65 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{{ with .Site.Params.name }}
-<meta name="author" content="{{ . }}">{{ end }}
-{{ with .Site.Params.description }}
-<meta name="description" content="{{ . }}">{{ end }}
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{{ with.Site.Params.name }}
+<meta name="author" content="{{ . }}" />{{ end }}
+{{ with.Site.Params.description }}
+<meta name="description" content="{{ . }}" />{{ end }}
 {{ .Hugo.Generator }}
 <title>{{ .Title }}{{ if .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
 <!-- <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}"> -->
-<link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/male-technologist_1f468-200d-1f4bb.png">
+<link
+  rel="icon"
+  href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/male-technologist_1f468-200d-1f4bb.png"
+/>
 {{ if .Site.Params.enableRSS }}
-<link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+<link
+  href="{{ .Site.RSSLink }}"
+  rel="alternate"
+  type="application/rss+xml"
+  title="{{ .Site.Title }}"
+/>
 {{ end }}
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css" integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/regular.css" integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
-<link rel="stylesheet" id="All-css" href="//fonts.googleapis.com/css?family=Nunito%3A400%2C600%2C700%7CRoboto+Mono"
-  type="text/css" media="all">
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css"
+  integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.7.2/css/regular.css"
+  integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css"
+  integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
+  integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  id="All-css"
+  href="//fonts.googleapis.com/css?family=Nunito%3A400%2C600%2C700%7CRoboto+Mono"
+  type="text/css"
+  media="all"
+/>
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
-<link id="night-css" rel="stylesheet" href="">
-{{ range .Site.Params.customCSS }}
-<link rel="stylesheet" href="{{ . | absURL }}">
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
+<link id="night-css" rel="stylesheet" href="" />
+{{ range.Site.Params.customCSS }}
+<link rel="stylesheet" href="{{ . | absURL }}" />
 {{ end }}
 
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/google_news.html" . }}
 {{ template "_internal/schema.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
-

@@ -13,6 +13,7 @@ disqusShortname = ""
   category = "categories"
 
 [params]
+  # for meta porpouses
   name = "John Doe"
 	description = "Describe your website"
   enableRSS = true
@@ -22,10 +23,6 @@ disqusShortname = ""
   # image = "/images/floppy.png"
   customCSS = ['css/main.css']
   emojicom = ""
-  # default titles
-  articles = ""
-  latestPosts = ""
-  projects = ""
   copyright = false
 
 # Add additional social link entries underneath
@@ -33,3 +30,32 @@ disqusShortname = ""
 		linkedin = "https://www.linkedin.com/in/"
     github   = "https://www.github.com/zapatran"
 		instagram = "https://www.instagram.com/"
+
+[languages]
+  [languages.en]
+    weight = 1
+    languageName = "🇺🇸"
+    projects = ""
+    contentDir = "content/english"
+    articles = ""
+    latestPosts = ""
+  [languages.es]
+    weight = 2
+    languageName = "🇪🇸"
+    projects = "Proyectos"
+    contentDir = "content/spanish"
+    articles = ""
+    latestPosts = ""
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.algolia]
+vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+params = ["categories", "tags"]
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]
