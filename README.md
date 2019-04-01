@@ -4,7 +4,6 @@ Oblate theme for hugo is a minimalistic theme for bloggers based on the theme of
 
 ![Screenshot](/images/screenshot.png)
 
-
 ## Installation
 
 Inside the folder of your Hugo site, run:
@@ -53,6 +52,7 @@ $ hugo new  post/<new-entry>.md
 ## Projects
 
 You can add your own projects creating a file `projects.json` with the following structure:
+
 ```json
 [
   {
@@ -85,18 +85,15 @@ To see your site in action, run Hugo's built-in local server.
 
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
-
 ## Contributing
 
 Found a bug or got an idea for a new feature? Feel free to use the [issue tracker](https://github.com/zapatran/hugo-oblate-theme/issues) to let me know. Or directly make a [pull request](https://github.com/zapatran/hugo-oblate-theme/pulls).
 
 Please create a separate branch for your pull request.
 
-
 ## License
 
 This theme is released under the MIT license. For more information read the [license](https://github.com/zapatran/hugo-oblate-theme/blob/master/LICENSE).
-
 
 ## Acknowledgements
 
