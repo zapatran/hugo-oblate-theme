@@ -35,17 +35,17 @@ disqusShortname = ""
   [languages.en]
     weight = 1
     languageName = "🇺🇸"
-    projects = ""
+    projects = "Projects"
     contentDir = "content/english"
-    articles = ""
-    latestPosts = ""
+    articles = "Articles"
+    latestPosts = "Lastest posts"
   [languages.es]
     weight = 2
     languageName = "🇪🇸"
     projects = "Proyectos"
     contentDir = "content/spanish"
-    articles = ""
-    latestPosts = ""
+    articles = "Artículos"
+    latestPosts = "Últimas entradas"
 
 [outputFormats.Algolia]
 baseName = "algolia"
