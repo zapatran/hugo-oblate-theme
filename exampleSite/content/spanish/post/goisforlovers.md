@@ -1,13 +1,6 @@
 +++
 title = "(Hu)go Template Primer"
 description = ""
-tags = [
-    "go",
-    "golang",
-    "templates",
-    "themes",
-    "development",
-]
 date = "2014-04-02"
 categories = [
     "Development",
@@ -16,329 +9,149 @@ categories = [
 emoji = "🍗"
 +++
 
-Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for
-its template engine. It is an extremely lightweight engine that provides a very
-small amount of logic. In our experience that it is just the right amount of
-logic to be able to create a good static website. If you have used other
-template systems from different languages or frameworks you will find a lot of
-similarities in go templates.
+Hugo usa la excelente biblioteca [go][] [html / template][gohtmltemplate] para
+su plantilla de motor. Es un motor extremadamente ligero que proporciona una muy
+pequeña cantidad de lógica. Según nuestra experiencia, es la cantidad justa de
+Lógica para poder crear un buen sitio web estático. Si has usado otros
+sistemas de plantillas de diferentes idiomas o marcos encontrará una gran cantidad de
+Similitudes en las plantillas go.
 
-This document is a brief primer on using go templates. The [go docs][gohtmltemplate]
-provide more details.
+Este documento es una breve introducción sobre el uso de go templates. El [go docs][gohtmltemplate]
+Proporcionar más detalles.
 
-## Introduction to Go Templates
+## Introducción a Go Templates
 
-Go templates provide an extremely simple template language. It adheres to the
-belief that only the most basic of logic belongs in the template or view layer.
-One consequence of this simplicity is that go templates parse very quickly.
+Las plantillas Go proporcionan un lenguaje de plantillas extremadamente simple. Se adhiere a la
+creencia de que solo la lógica más básica pertenece a la plantilla o capa de vista.
+Una consecuencia de esta simplicidad es que las plantillas se analizan muy rápidamente.
 
-A unique characteristic of go templates is they are content aware. Variables and
-content will be sanitized depending on the context of where they are used. More
-details can be found in the [go docs][gohtmltemplate].
+Una característica única de las plantillas go es que son conscientes del contenido. Variables y
+El contenido se desinfectará según el contexto en el que se utilicen. Más
+los detalles se pueden encontrar en [go docs][gohtmltemplate].
 
-## Basic Syntax
+## Sintaxis básica
 
-Go lang templates are html files with the addition of variables and
-functions. 
+Las plantillas de go lang son archivos html con la adición de variables y
+funciones
 
-**Go variables and functions are accessible within {{ }}**
+** Las variables y funciones de Go están disponibles dentro de {{}} **
 
-Accessing a predefined variable "foo":
+Accediendo a una variable predefinida "foo":
 
-    {{ foo }}
+    {{foo}}
 
-**Parameters are separated using spaces**
+** Los parámetros se separan usando espacios **
 
-Calling the add function with input of 1, 2:
+Llamando a la función sumar con entrada de 1, 2:
 
-    {{ add 1 2 }}
+    {{add 1 2}}
 
-**Methods and fields are accessed via dot notation**
+** Se accede a los métodos y campos mediante notación de puntos **
 
-Accessing the Page Parameter "bar"
+Accediendo al parámetro de página "barra"
 
-    {{ .Params.bar }}
+    {{.Params.bar}}
 
-**Parentheses can be used to group items together**
+** Los paréntesis se pueden usar para agrupar elementos **
 
-    {{ if or (isset .Params "alt") (isset .Params "caption") }} Caption {{ end }}
+    {{if o (isset .Params "alt") (isset .Params "caption")}} Caption {{end}}
 
 
 ## Variables
 
-Each go template has a struct (object) made available to it. In hugo each
-template is passed either a page or a node struct depending on which type of
-page you are rendering. More details are available on the
-[variables](/layout/variables) page.
+Cada plantilla go tiene una estructura (objeto) puesta a su disposición. En hugo cada uno
+La plantilla se pasa ya sea una página o una estructura de nodo dependiendo de qué tipo de
+página que estás renderizando. Más detalles están disponibles en el
+[variables](/layout/variables) página.
 
-A variable is accessed by referencing the variable name.
+Se accede a una variable haciendo referencia al nombre de la variable.
 
-    <title>{{ .Title }}</title>
+    <title> {{.Title}} </title>
 
-Variables can also be defined and referenced.
+Las variables también pueden ser definidas y referenciadas.
 
-    {{ $address := "123 Main St."}}
-    {{ $address }}
+    {{$ dirección: = "123 Main St."}}
+    {{$ dirección}}
 
+## Funciones
 
-## Functions
+Vaya con la plantilla con algunas funciones que proporcionan una funcionalidad básica. La ida
+El sistema de plantillas también proporciona un mecanismo para que las aplicaciones amplíen la
+Funciones disponibles con su propio. [Plantilla de Hugo
+funciones] (/ diseño / funciones) proporcionan algunas funciones adicionales que creemos
+Son útiles para la construcción de sitios web. Las funciones son llamadas usando su nombre
+seguido de los parámetros requeridos separados por espacios. Modelo
+No se pueden agregar funciones sin volver a compilar hugo.
 
-Go template ship with a few functions which provide basic functionality. The go
-template system also provides a mechanism for applications to extend the
-available functions with their own. [Hugo template
-functions](/layout/functions) provide some additional functionality we believe
-are useful for building websites. Functions are called by using their name
-followed by the required parameters separated by spaces. Template
-functions cannot be added without recompiling hugo.
+**Ejemplo:**
 
-**Example:**
+    {{add 1 2}}
 
-    {{ add 1 2 }}
+## incluye
 
-## Includes
+Al incluir otra plantilla le pasaremos los datos que se le
+capaz de acceder. Para pasar a lo largo del contexto actual, por favor recuerde
+incluye un punto al final. La ubicación de las plantillas siempre comenzará en
+El directorio / layout / dentro de Hugo.
 
-When including another template you will pass to it the data it will be
-able to access. To pass along the current context please remember to
-include a trailing dot. The templates location will always be starting at
-the /layout/ directory within Hugo.
+**Ejemplo:**
 
-**Example:**
+    {{template "chrome / header.html". }}
 
-    {{ template "chrome/header.html" . }}
 
+## Lógica
 
-## Logic
+Las plantillas Go proporcionan la iteración más básica y la lógica condicional.
 
-Go templates provide the most basic iteration and conditional logic.
+### Iteración
 
-### Iteration 
+Al igual que en Go, las plantillas Go hacen un uso intensivo del rango para iterar sobre
+Un mapa, matriz o segmento. Los siguientes son diferentes ejemplos de cómo usar
+distancia.
 
-Just like in go, the go templates make heavy use of range to iterate over
-a map, array or slice. The following are different examples of how to use
-range.
+**Ejemplo 1: Uso de contexto**
 
-**Example 1: Using Context**
+    {{array array}}
+        {{. }}
+    {{ final }}
 
-    {{ range array }} 
-        {{ . }}
-    {{ end }}
+**Ejemplo 2: Declaración de valor de nombre de variable**
 
-**Example 2: Declaring value variable name**
+    {{range $ element: = array}}
+        {{$ elemento}}
+    {{ final }}
 
-    {{range $element := array}} 
-        {{ $element }} 
-    {{ end }}
+**Ejemplo 2: Declaración de clave y valor nombre de variable**
 
-**Example 2: Declaring key and value variable name**
+    {{range $ index, $ element: = array}}
+        {{$ index}}
+        {{$ elemento}}
+    {{ final }}
 
-    {{range $index, $element := array}}
-        {{ $index }} 
-        {{ $element }} 
-    {{ end }}
+### Condicionales
 
-### Conditionals 
+Si, si no, con, o, y proporciona el marco para el manejo condicional
+Lógica en Go Templates. Al igual que el rango, cada declaración se cierra con `end`.
 
-If, else, with, or, & and provide the framework for handling conditional
-logic in Go Templates. Like range, each statement is closed with `end`.
 
+Las plantillas Go tratan los siguientes valores como falsos:
 
-Go Templates treat the following values as false: 
+* falso
+* 0
+* cualquier matriz, sector, mapa o cadena de longitud cero
 
-* false
-* 0 
-* any array, slice, map, or string of length zero
+**Ejemplo 1: Si**
 
-**Example 1: If**
+    {{if isset .Params "title"}} <h4> {{index .Params "title"}} </h4> {{end}}
 
-    {{ if isset .Params "title" }}<h4>{{ index .Params "title" }}</h4>{{ end }}
+**Ejemplo 2: Si -> Else**
 
-**Example 2: If -> Else** 
+    {{if isset .Params "alt"}}
+        {{index .Params "alt"}}
+    {{más}}
+        {{index .Params "caption"}}
+    {{ final }}
 
-    {{ if isset .Params "alt" }} 
-        {{ index .Params "alt" }}
-    {{else}}
-        {{ index .Params "caption" }}
-    {{ end }}
+**Ejemplo 3: And & Or**
 
-**Example 3: And & Or**
-
-    {{ if and (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}
-
-**Example 4: With**
-
-An alternative way of writing "if" and then referencing the same value
-is to use "with" instead. With rebinds the context `.` within its scope,
-and skips the block if the variable is absent.
-
-The first example above could be simplified as:
-
-    {{ with .Params.title }}<h4>{{ . }}</h4>{{ end }}
-
-**Example 5: If -> Else If** 
-
-    {{ if isset .Params "alt" }} 
-        {{ index .Params "alt" }}
-    {{ else if isset .Params "caption" }}
-        {{ index .Params "caption" }}
-    {{ end }}
-
-## Pipes
-
-One of the most powerful components of go templates is the ability to
-stack actions one after another. This is done by using pipes. Borrowed
-from unix pipes, the concept is simple, each pipeline's output becomes the
-input of the following pipe. 
-
-Because of the very simple syntax of go templates, the pipe is essential
-to being able to chain together function calls. One limitation of the
-pipes is that they only can work with a single value and that value
-becomes the last parameter of the next pipeline. 
-
-A few simple examples should help convey how to use the pipe.
-
-**Example 1 :**
-
-    {{ if eq 1 1 }} Same {{ end }}
-
-is the same as 
-
-    {{ eq 1 1 | if }} Same {{ end }}
-
-It does look odd to place the if at the end, but it does provide a good
-illustration of how to use the pipes.
-
-**Example 2 :**
-
-    {{ index .Params "disqus_url" | html }}
-
-Access the page parameter called "disqus_url" and escape the HTML.
-
-**Example 3 :**
-
-    {{ if or (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}
-    Stuff Here
-    {{ end }}
-
-Could be rewritten as 
-
-    {{  isset .Params "caption" | or isset .Params "title" | or isset .Params "attr" | if }}
-    Stuff Here 
-    {{ end }}
-
-
-## Context (aka. the dot)
-
-The most easily overlooked concept to understand about go templates is that {{ . }}
-always refers to the current context. In the top level of your template this
-will be the data set made available to it. Inside of a iteration it will have
-the value of the current item. When inside of a loop the context has changed. .
-will no longer refer to the data available to the entire page. If you need to
-access this from within the loop you will likely want to set it to a variable
-instead of depending on the context.
-
-**Example:**
-
-      {{ $title := .Site.Title }}
-      {{ range .Params.tags }}
-        <li> <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a> - {{ $title }} </li>
-      {{ end }}
-
-Notice how once we have entered the loop the value of {{ . }} has changed. We
-have defined a variable outside of the loop so we have access to it from within
-the loop.
-
-# Hugo Parameters 
-
-Hugo provides the option of passing values to the template language
-through the site configuration (for sitewide values), or through the meta
-data of each specific piece of content. You can define any values of any
-type (supported by your front matter/config format) and use them however
-you want to inside of your templates. 
-
-
-## Using Content (page) Parameters 
-
-In each piece of content you can provide variables to be used by the
-templates. This happens in the [front matter](/content/front-matter). 
-
-An example of this is used in this documentation site. Most of the pages
-benefit from having the table of contents provided. Sometimes the TOC just
-doesn't make a lot of sense. We've defined a variable in our front matter
-of some pages to turn off the TOC from being displayed. 
-
-Here is the example front matter:
-
-```
----
-title: "Permalinks"
-date: "2013-11-18"
-aliases:
-  - "/doc/permalinks/"
-groups: ["extras"]
-groups_weight: 30
-notoc: true
----
-```
-
-Here is the corresponding code inside of the template:
-
-      {{ if not .Params.notoc }}
-        <div id="toc" class="well col-md-4 col-sm-6">
-        {{ .TableOfContents }}
-        </div>
-      {{ end }}
-
-
-
-## Using Site (config) Parameters
-In your top-level configuration file (eg, `config.yaml`) you can define site
-parameters, which are values which will be available to you in chrome.
-
-For instance, you might declare:
-
-```yaml
-params:
-  CopyrightHTML: "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
-  TwitterUser: "spf13"
-  SidebarRecentLimit: 5
-```
-
-Within a footer layout, you might then declare a `<footer>` which is only
-provided if the `CopyrightHTML` parameter is provided, and if it is given,
-you would declare it to be HTML-safe, so that the HTML entity is not escaped
-again.  This would let you easily update just your top-level config file each
-January 1st, instead of hunting through your templates.
-
-```
-{{if .Site.Params.CopyrightHTML}}<footer>
-<div class="text-center">{{.Site.Params.CopyrightHTML | safeHtml}}</div>
-</footer>{{end}}
-```
-
-An alternative way of writing the "if" and then referencing the same value
-is to use "with" instead. With rebinds the context `.` within its scope,
-and skips the block if the variable is absent:
-
-```
-{{with .Site.Params.TwitterUser}}<span class="twitter">
-<a href="https://twitter.com/{{.}}" rel="author">
-<img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
- alt="Twitter"></a>
-</span>{{end}}
-```
-
-Finally, if you want to pull "magic constants" out of your layouts, you can do
-so, such as in this example:
-
-```
-<nav class="recent">
-  <h1>Recent Posts</h1>
-  <ul>{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
-    <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
-  {{end}}</ul>
-</nav>
-```
-
-
-[go]: <http://golang.org/>
-[gohtmltemplate]: <http://golang.org/pkg/html/template/>
+    {{if y (o (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}

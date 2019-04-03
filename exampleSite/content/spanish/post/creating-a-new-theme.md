@@ -1,19 +1,19 @@
 +++
 author = "Michael Henderson"
 date = "2014-09-28"
-linktitle = "Creating a New Theme"
-title = "Creating a New Theme"
+linktitle = "Creando un Nuevo Tema"
+title = "Creando un Nuevo Tema"
 image = "/images/floppy.png"
 +++
 
 
-### **Introduction**
+### **Introduccion**
 
-This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I'll explain how Hugo uses templates and how you can organize your templates to create a theme. I won't cover using CSS to style your theme.
+Este tutorial te mostrará cómo crear un tema simple en Hugo. Supongo que está familiarizado con HTML, la línea de comandos de bash, y que se siente cómodo utilizando Markdown para dar formato al contenido. Explicaré cómo Hugo usa las plantillas y cómo puedes organizarlas para crear un tema. No cubriré el uso de CSS para estilizar tu tema.
 
-We'll start with creating a new site with a very basic template. Then we'll add in a few pages and posts. With small variations on that, you will be able to create many different types of web sites.
+Comenzaremos creando un nuevo sitio con una plantilla muy básica. Luego agregaremos algunas páginas y publicaciones. Con pequeñas variaciones en eso, podrá crear muchos tipos diferentes de sitios web.
 
-In this tutorial, commands that you enter will start with the "$" prompt. The output will follow. Lines that start with "#" are comments that I've added to explain a point. When I show updates to a file, the ":wq" on the last line means to save the file.
+En este tutorial, los comandos que ingrese comenzarán con el indicador "$". La salida seguirá. Las líneas que comienzan con "#" son comentarios que he agregado para explicar un punto. Cuando muestro las actualizaciones de un archivo, el ": wq" en la última línea significa guardar el archivo.
 
 Here's an example:
 
