@@ -1,6 +1,6 @@
 {{ $p := where .Paginator.Pages "Section" "ne" "" }}
 {{ if len $p | gt 1 }}
-no articles yet
+  {{ partial "not-found.html" .}}
 {{ else }}
 {{ range $p }}
 <a class="post" id="post-3398" href='{{ .URL }}'>
