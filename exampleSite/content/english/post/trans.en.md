@@ -8,6 +8,7 @@ categories = [
     "Development",
     "golang",
 ]
+draft = true
 +++
 
 in english

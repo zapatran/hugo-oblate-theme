@@ -1,14 +1,18 @@
-{{ range where .Paginator.Pages "Section" "ne" "" }}
-  <a class="post" id="post-3398" href='{{ .URL }}'>
-    <div class="post-thumbnail">
-      {{ if .Params.emoji }}
-        <span class="post-icon">{{ .Params.emoji }}</span>
-      {{ else }}
-        <img src="{{ (print .Params.image) | absURL }}" alt="{{ .Params.title }}" height="30" width="30">
-      {{ end }}
-    </div>
-    <div class="post-title">{{ .LinkTitle }}</div>
-    <span class="post-date"><time>{{ .Date.Format "Jan 2 2006" }}</time></span>
-  </a>
+{{ $p := where .Paginator.Pages "Section" "ne" "" }}
+{{ if len $p | gt 1 }}
+no articles yet
+{{ else }}
+{{ range $p }}
+<a class="post" id="post-3398" href='{{ .URL }}'>
+  <div class="post-thumbnail">
+    {{ if .Params.emoji }}
+    <span class="post-icon">{{ .Params.emoji }}</span>
+    {{ else }}
+    <img src="{{ (print .Params.image) | absURL }}" alt="{{ .Params.title }}" height="30" width="30">
+    {{ end }}
+  </div>
+  <div class="post-title">{{ .LinkTitle }}</div>
+  <span class="post-date"><time>{{ .Date.Format "Jan 2 2006" }}</time></span>
+</a>
 {{ end }}
-
+{{ end }}

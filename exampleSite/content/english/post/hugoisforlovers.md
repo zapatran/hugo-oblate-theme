@@ -13,6 +13,7 @@ categories = [
     "golang",
 ]
 emoji = "📖"
+draft = true
 +++
 
 ## Step 1. Install Hugo
