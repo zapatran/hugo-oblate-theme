@@ -1,0 +1,17 @@
+{
+  "branch": "master",
+  "repositoryUrl": "https://github.com/zapatran/hugo-oblate-theme",
+  "ci": false,
+  "npmPublish": false,
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "./CHANGELOG.md"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}

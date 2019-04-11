@@ -1,0 +1,26 @@
+{
+  "name": "hugo-oblate-theme",
+  "version": "1.2.0",
+  "description": "Oblate theme for hugo is a minimalistic theme for bloggers based on the theme of the same-named Oblate from [Tania Rascia](//github.com/taniarascia). Noteworthy features of this Hugo theme are the support for RSS feeds, syntax highlighting for source code.",
+  "main": "index.js",
+  "scripts": {
+    "cz": "git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zapatran/hugo-oblate-theme.git"
+  },
+  "keywords": [],
+  "author": "Thor Jubera Albo <thor.jubera.albo@gmail.com> (https://zapatran.dev)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zapatran/hugo-oblate-theme/issues"
+  },
+  "homepage": "https://github.com/zapatran/hugo-oblate-theme#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/github": "^5.2.10",
+    "semantic-release": "^15.13.3"
+  }
+}
