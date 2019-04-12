@@ -67,6 +67,34 @@ You can add your own projects creating a file `projects.json` with the following
 ]
 ```
 
+## Shortcodes
+
+There are two kind of shortcodes `alerts` y `filename headers`
+
+### Alerts
+
+types of alerts `alert`, `info`, `note`, `details`, `success` in order to place an alert you need to 
+
+```go
+{{< blockquote <type> />}}
+this is my alert
+{{< /blockquote }}
+```
+example
+{{< blockquote alert />}}
+remember not no commit node_modules
+{{< /blockquote }}
+
+### Filenames headers
+
+Now you can add filename headers in a block code
+
+{{< filename "main.js" />}}
+```javascript
+console.log('Welcome to the party pal!')
+```
+
+
 ## Disqus
 
 This theme features a comment system powered by Disqus too. Just add your Disqus-shortname to the [`config.toml`](//github.com/zapatran/hugo-oblate-theme/blob/dev/exampleSite/config.toml) and let readers respond to your blog posts.
