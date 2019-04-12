@@ -247,6 +247,36 @@ blockquote.success {
   background: #262626;
 }
 
+blockquote.success {
+  border: 1px solid #28a745 !important;
+  border-left: 8px solid #28a745 !important;
+  color: #28a745 !important;
+}
+
+blockquote.details {
+  border: 1px solid #a5c3ff !important;
+  border-left: 8px solid #a5c3ff !important;
+  color: #a5c3ff !important;
+}
+
+blockquote.note {
+  border: 1px solid #cdcdcd !important;
+  border-left: 8px solid #cdcdcd !important;
+  color: #cdcdcd !important;
+}
+
+blockquote.info {
+  border: 1px solid #f0d461 !important;
+  border-left: 8px solid #f0d461 !important;
+  color: #f0d461 !important;
+}
+
+blockquote.alert {
+  border: 1px solid #ff4a6e !important;
+  border-left: 8px solid #ff4a6e !important;
+  color: #ff4a6e !important;
+}
+
 blockquote cite {
   color: rgba(255, 255, 255, 0.7);
 }
