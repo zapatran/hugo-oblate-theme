@@ -69,7 +69,7 @@ You can add your own projects creating a file `projects.json` with the following
 
 ## Shortcodes
 
-There are two kind of shortcodes `alerts` y `filename headers`
+There are threes kind of shortcodes `alerts` y `filename headers` and `mermaid`
 
 ### Alerts
 
@@ -94,6 +94,25 @@ Now you can add filename headers in a block code
 console.log('Welcome to the party pal!')
 ```
 
+### Mermaid
+
+check the [official documentation](https://mermaidjs.github.io)
+
+```go
+{{<mermaid>}}
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->Alice: Great!
+    John->Bob: How about you?
+    Bob-->John: Jolly good!
+{{< /mermaid >}}
+```
 
 ## Disqus
 
