@@ -9,5 +9,10 @@
 <script src="https://cdn.emojicom.io/embed/widget.js" async></script>
 <!-- End emojicom.io widget -->
 {{ end }}
+<script
+  src="{{"mermaid/mermaid.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
 
 {{ template "_internal/google_analytics.html" . }}
