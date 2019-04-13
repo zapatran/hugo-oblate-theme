@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/zapatran/hugo-oblate-theme/compare/v1.4.0...v1.5.0) (2019-04-13)
+
+
+### Features
+
+* **shorcodes:** add mermaid support ([1f94dec](https://github.com/zapatran/hugo-oblate-theme/commit/1f94dec)), closes [#4](https://github.com/zapatran/hugo-oblate-theme/issues/4)
+
 # [1.4.0](https://github.com/zapatran/hugo-oblate-theme/compare/v1.3.1...v1.4.0) (2019-04-12)
 
 
