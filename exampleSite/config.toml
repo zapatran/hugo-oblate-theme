@@ -47,12 +47,6 @@ disqusShortname = ""
     articles = "Artículos"
     latestPosts = "Últimas entradas"
 
-[outputFormats.Algolia]
-baseName = "algolia"
-isPlainText = true
-mediaType = "application/json"
-notAlternative = true
-
 [params.algolia]
 vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
 params = ["categories", "tags"]
