@@ -4,7 +4,7 @@
   "description": "Oblate theme for hugo is a minimalistic theme for bloggers based on the theme of the same-named Oblate from [Tania Rascia](//github.com/taniarascia). Noteworthy features of this Hugo theme are the support for RSS feeds, syntax highlighting for source code.",
   "main": "index.js",
   "scripts": {
-    "cz": "git-cz",
+    "commit": "git-cz",
     "semantic-release": "semantic-release"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.2.10",
+    "git-cz": "^4.7.6",
     "semantic-release": "^15.13.3"
   }
 }
