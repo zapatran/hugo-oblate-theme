@@ -22,6 +22,6 @@
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
     "git-cz": "^4.7.6",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^17.2.3"
   }
 }
